@@ -11,12 +11,21 @@
         android:label="fragment_fragment_search_user"
         tools:layout="@layout/fragment_fragment_search_user" >
         <action
-            android:id="@+id/action_fragmentSearchUser_to_fragmentFollowerFollowingProfileView"
-            app:destination="@id/fragmentFollowerFollowingProfileView" />
+            android:id="@+id/action_fragmentSearchUser_to_fragmentFollowerFollowingList"
+            app:destination="@id/fragmentFollowerFollowingList" />
     </fragment>
     <fragment
         android:id="@+id/fragmentFollowerFollowingProfileView"
         android:name="com.example.speerinterviewsubmission.ui.fragment.profile_view.FragmentFollowerFollowingProfileView"
         android:label="fragment_fragment__follower_following_profile_view"
-        tools:layout="@layout/fragment_fragment__follower_following_profile_view" />
+        tools:layout="@layout/fragment__follower_following_profile_view" />
+    <fragment
+        android:id="@+id/fragmentFollowerFollowingList"
+        android:name="com.example.speerinterviewsubmission.ui.fragment.follower_following_list.FragmentFollowerFollowingList"
+        android:label="fragment_fragment_follower_following_list"
+        tools:layout="@layout/fragment_fragment_follower_following_list" >
+        <action
+            android:id="@+id/action_fragmentFollowerFollowingList_to_fragmentFollowerFollowingProfileView"
+            app:destination="@id/fragmentFollowerFollowingProfileView" />
+    </fragment>
 </navigation>

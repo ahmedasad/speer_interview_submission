@@ -8,12 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.speerinterviewsubmission.data.model.User
 import com.example.speerinterviewsubmission.databinding.ListItemFollowerFollowingBinding
+import com.jakewharton.rxbinding.view.RxView
 import com.squareup.picasso.Picasso
+import rx.subjects.PublishSubject
 
 class UserListAdapter : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
 
 
     private var users = ArrayList<User>()
+    val itemClickSubject: PublishSubject<String> = PublishSubject.create<String>()
+
 
     class ViewHolder(binding: ListItemFollowerFollowingBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -29,7 +33,10 @@ class UserListAdapter : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
             LayoutInflater.from(viewGroup.context), viewGroup, false
         )
 
-
+        val holder = ViewHolder(binding)
+        RxView.clicks(binding.root).takeUntil(RxView.detaches(viewGroup)).subscribe {
+            itemClickSubject.onNext(holder.userName.text.toString())
+        }
         return ViewHolder(binding)
     }
 

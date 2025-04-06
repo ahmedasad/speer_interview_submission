@@ -77,4 +77,10 @@ dependencies {
 
     implementation(libs.picasso)
 
+    //skeleton
+    implementation(libs.skeletonlayout)
+
+    // RX
+    implementation(libs.rxbinding)
+
 }

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.faltenreich.skeletonlayout.SkeletonLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="#eeedfd"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/banner_profile"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_profile_pic"
+                        style="@style/circleImageView"
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:layout_marginHorizontal="0dp"
+                        android:maxWidth="250dp"
+                        android:maxHeight="250dp"
+                        android:padding="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/person_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/circleImageView"
+                        app:strokeWidth="1dp" />
+
+                    <TextView
+                        android:id="@+id/txt_profile_name"
+                        style="@style/Theme.SpeerInterviewSubmission.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="6dp"
+                        android:textAlignment="center"
+                        android:text="@string/not_found"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_profile_pic" />
+
+                    <TextView
+                        android:id="@+id/txt_profile_user_name"
+                        style="@style/Theme.SpeerInterviewSubmission.UserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:textAlignment="center"
+                        android:text="@string/not_found"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_profile_name" />
+
+                    <TextView
+                        android:id="@+id/txt_profile_description"
+                        style="@style/Theme.SpeerInterviewSubmission.Description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="6dp"
+                        android:textAlignment="center"
+                        android:text="@string/not_found"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_profile_user_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/banner_profile">
+
+                    <Button
+                        android:id="@+id/btn_followers"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Followers 0"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toStartOf="@+id/ver_divider_view"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/ver_divider_view"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="#020202"
+                        app:layout_constraintBottom_toBottomOf="@id/btn_followers"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_following"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/btn_followers"
+                        app:layout_constraintTop_toTopOf="@id/btn_followers" />
+
+                    <Button
+                        android:id="@+id/btn_following"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foregroundTint="@color/black"
+                        android:text="Following 0"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/ver_divider_view"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/hor_divider_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#3A3A3A"
+                        app:layout_constraintTop_toBottomOf="@id/btn_followers" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rec_users"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="6dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hor_divider_view"
+                        tools:listitem="@layout/list_item_follower_following" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.faltenreich.skeletonlayout.SkeletonLayout>
