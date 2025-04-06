@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.speerinterviewsubmission"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.speerinterviewsubmission"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -25,6 +25,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    viewBinding{
+        enable = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -42,7 +46,35 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Retrofit
+    implementation (libs.converter.gson)
+    implementation (libs.converter.scalars)
+    implementation (libs.logging.interceptor)
+    implementation (libs.retrofit)
+
+
+    // Coroutines
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.kotlinx.coroutines.core)
+
+    //livedata
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation (libs.androidx.lifecycle.compiler)
+
+
+    implementation(libs.koin.android)
+
+    // Navigation component / Fragments
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+
+    implementation(libs.picasso)
+
 }

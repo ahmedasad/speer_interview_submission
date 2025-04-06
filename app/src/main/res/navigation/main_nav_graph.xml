@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/fragmentSearchUser">
+
+    <fragment
+        android:id="@+id/fragmentSearchUser"
+        android:name="com.example.speerinterviewsubmission.ui.fragment.user_search.FragmentSearchUser"
+        android:label="fragment_fragment_search_user"
+        tools:layout="@layout/fragment_fragment_search_user" >
+        <action
+            android:id="@+id/action_fragmentSearchUser_to_fragmentFollowerFollowingProfileView"
+            app:destination="@id/fragmentFollowerFollowingProfileView" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFollowerFollowingProfileView"
+        android:name="com.example.speerinterviewsubmission.ui.fragment.profile_view.FragmentFollowerFollowingProfileView"
+        android:label="fragment_fragment__follower_following_profile_view"
+        tools:layout="@layout/fragment_fragment__follower_following_profile_view" />
+</navigation>

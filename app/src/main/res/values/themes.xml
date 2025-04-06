@@ -6,4 +6,27 @@
     </style>
 
     <style name="Theme.SpeerInterviewSubmission" parent="Base.Theme.SpeerInterviewSubmission" />
+
+    <style name="Theme.SpeerInterviewSubmission.Label" parent="Base.Theme.SpeerInterviewSubmission">
+        <item name="android:textStyle" >bold</item>
+        <item name="android:textSize" >18sp</item>
+    </style>
+
+    <style name="Theme.SpeerInterviewSubmission.Title" parent="Base.Theme.SpeerInterviewSubmission">
+        <item name="android:textStyle" >bold</item>
+        <item name="android:textSize" >18sp</item>
+    </style>
+    <style name="Theme.SpeerInterviewSubmission.UserName" parent="Base.Theme.SpeerInterviewSubmission">
+        <item name="android:textStyle" >normal</item>
+        <item name="android:textSize" >16sp</item>
+    </style>
+    <style name="Theme.SpeerInterviewSubmission.Description" parent="Base.Theme.SpeerInterviewSubmission">
+        <item name="android:textStyle" >normal</item>
+        <item name="android:textSize" >14sp</item>
+    </style>
+
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

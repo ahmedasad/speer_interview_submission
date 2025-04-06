@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SpeerInterviewSubmission</string>
+    <string name="search_user">Search User..</string>
+    <string name="not_found">Not found</string>
+    <string name="use_search_bar">Use Search bar for users</string>
+
 </resources>
